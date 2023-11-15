@@ -1,12 +1,14 @@
 lower_word = _{ ASCII_ALPHA_LOWER+ }
 email_domain = { lower_word ~ ("." ~ lower_word){1, 2}}
 email_name = { lower_word ~ "." ~ lower_word }
-email = { email_name ~ "@" ~ email_domain }
+email = { email_name ~ "@" ~ email_domain}
+just_email = { SOI ~ email_name ~ "@" ~ email_domain ~ EOI }
 
 capital_letter_word = _{ ASCII_ALPHA_UPPER ~ (ASCII_ALPHA_LOWER)* }
 name = { capital_letter_word }
 surname = { capital_letter_word }
 user = { name ~ WHITE_SPACE ~ surname ~ ", " ~ email}
 
-file = { SOI ~ (user ~ NEWLINE)* ~ EOI }
+file_email = { SOI ~ (email ~ NEWLINE)* ~ (email ~ NEWLINE?) ~ EOI } /* For some reason this rule generates empty user at the end. Any help with that? */
+file_user = { SOI ~ (user ~ NEWLINE)* ~ (user ~ NEWLINE?) ~ EOI } /* For some reason this rule generates empty user at the end. Any help with that? */
 

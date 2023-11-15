@@ -1,0 +1,12 @@
+lower_word = _{ ASCII_ALPHA_LOWER+ }
+email_domain = { lower_word ~ ("." ~ lower_word){1, 2}}
+email_name = { lower_word ~ "." ~ lower_word }
+email = { email_name ~ "@" ~ email_domain }
+
+capital_letter_word = _{ ASCII_ALPHA_UPPER ~ (ASCII_ALPHA_LOWER)* }
+name = { capital_letter_word }
+surname = { capital_letter_word }
+user = { name ~ WHITE_SPACE ~ surname ~ ", " ~ email}
+
+file = { SOI ~ (user ~ NEWLINE)* ~ EOI }
+

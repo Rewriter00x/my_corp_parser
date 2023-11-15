@@ -3,12 +3,9 @@ name = "my_parser_kma_group_3_DB"
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
-description = "A brief description"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+description = "Parser for corporate user information. Full info at https://github.com/Rewriter00x/my_parser_kma_group_3_DB"
 
 [dependencies]
 anyhow = "1.0.75"
-peg = "0.8.2"
 pest = "2.7.5"
 pest_derive = "2.7.5"

@@ -1,22 +1,12 @@
-use anyhow::anyhow;
-//use my_parser_kma_group_3_DB::*;
-use pest::Parser;
-use pest_derive::Parser;
-
-#[derive(Parser)]
-#[grammar = "./grammar.pest"]
-struct Grammar;
+use my_parser_kma_group_3_DB::*;
+use std::env;
 
 pub fn main() -> anyhow::Result<()> {
-    //println!("{:?}", list_parser::list("[1,1,2,3,5,8]"));
+    let args : Vec<String> = env::args().collect();
 
-    Ok(())
-}
+    // parse args & get res
 
-#[test]
-pub fn basic_test() -> anyhow::Result<()> {
-    let got = Grammar::parse(Rule::field, "131.13")?.next().ok_or_else(|| anyhow!("no pair"))?;
-    dbg!(got);
-
+    let res = ParsedEmail::new();
+    println!("{:?}", res);
     Ok(())
 }

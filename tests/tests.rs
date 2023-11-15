@@ -1,3 +1,4 @@
+use std::fs;
 use my_parser_kma_group_3_DB::*;
 
 #[test]
@@ -68,11 +69,12 @@ pub fn bad_user_just_email_test() {
 
 #[test]
 pub fn good_email_file_test() {
-    let got = parse_file_email(
+    /*let got = parse_file_email(
         "d.burliai@ukma.edu.ua\n\
         d.burliai@gmail.com\n\
         me.time@dist.edu"
-    ).unwrap();
+    ).unwrap();*/
+    let got = parse_file_email(fs::read_to_string("tests/test_email.txt").unwrap().as_str()).unwrap();
     let res = vec!(
         ParsedEmail{ name: "d.burliai".to_string(), domain: "ukma.edu.ua".to_string() },
         ParsedEmail{ name: "d.burliai".to_string(), domain: "gmail.com".to_string() },
@@ -84,11 +86,12 @@ pub fn good_email_file_test() {
 
 #[test]
 pub fn good_user_file_test() {
-    let got = parse_file_user(
+    /*let got = parse_file_user(
         "Danylo Burliai, d.burliai@ukma.edu.ua\n\
         Daniel Burn, d.burliai@gmail.com\n\
         Mister Time, me.time@dist.edu"
-    ).unwrap();
+    ).unwrap();*/
+    let got = parse_file_user(fs::read_to_string("tests/test_user.txt").unwrap().as_str()).unwrap();
     let res = vec!(
         ParsedUser{ name: "Danylo".to_string(), surname: "Burliai".to_string(), email: ParsedEmail{ name: "d.burliai".to_string(), domain: "ukma.edu.ua".to_string() } },
         ParsedUser{ name: "Daniel".to_string(), surname: "Burn".to_string(), email: ParsedEmail{ name: "d.burliai".to_string(), domain: "gmail.com".to_string() } },

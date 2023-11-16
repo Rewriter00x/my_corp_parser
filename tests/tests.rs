@@ -1,5 +1,5 @@
 use std::fs;
-use my_parser_kma_group_3_DB::*;
+use my_corp_parser::*;
 
 #[test]
 pub fn good_email_test() {

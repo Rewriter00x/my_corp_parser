@@ -1,4 +1,4 @@
-use my_parser_kma_group_3_DB::*;
+use my_corp_parser::*;
 use std::{fs, env};
 
 fn read_file(path: &str) -> String {

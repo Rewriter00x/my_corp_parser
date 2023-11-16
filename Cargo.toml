@@ -1,9 +1,9 @@
 [package]
-name = "my_parser_kma_group_3_DB"
+name = "my_corp_parser"
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
-description = "Parser for corporate user information. Full info at https://github.com/Rewriter00x/my_parser_kma_group_3_DB"
+description = "Parser for corporate user information. Full info at https://github.com/Rewriter00x/my_corp_parser"
 
 [dependencies]
 anyhow = "1.0.75"

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/my_parser_kma_group_3_DB.iml" filepath="$PROJECT_DIR$/.idea/my_parser_kma_group_3_DB.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/my_corp_parser.iml" filepath="$PROJECT_DIR$/.idea/my_corp_parser.iml" />
     </modules>
   </component>
 </project>

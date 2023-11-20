@@ -12,7 +12,7 @@ fn main() -> anyhow::Result<()> {
     //println!("{}", args.len()); idk about windows, but my mac shows 2 cli by default if launched via cargo run, so i'm not checking len
 
     if args.len() <= 2 {
-        println!("To use cli write text or filename as last arg. Use flag --file to parse file content or --email to parse email instead of user");
+        println!("To use cli write text or filename as last arg. Use flag --file to parse file content or --email to parse email instead of user. Use --credits to display credits");
         return Ok(());
     }
 
@@ -24,6 +24,12 @@ fn main() -> anyhow::Result<()> {
         match arg.as_str() {
             "--file" => { is_file = true; },
             "--email" => { is_user = false; },
+            "--credits" => {
+                println!("My_Corp_Parser. Parsing your organization's data in no time!");
+                println!("Version 1.0.1");
+                println!("This parser was made by Danylo Burliai for educational purposes at kma rust course");
+                return Ok(());
+            },
             _ => { s = arg; },
         }
     }
